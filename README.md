@@ -59,16 +59,16 @@ http://localhost:8080
 
 ---
 
-## 📌 Endpoints principales
+##  Endpoints principales
 
 | Método | Endpoint                              | Descripción                        |
 |--------|---------------------------------------|------------------------------------|
-| GET    | `/sistema/api/v1/clientes`            | Listar todos los clientes           |
-| GET    | `/sistema/api/v1/clientes/{username}` | Buscar cliente por username         |
-| POST   | `/sistema/api/v1/clientes`            | Crear cliente                       |
-| PUT    | `/sistema/api/v1/clientes/{id}`       | Actualizar cliente existente        |
-| PATCH  | `/sistema/api/v1/clientes/{id}`       | Actualizar parcialmente un cliente  |
-| DELETE | `/sistema/api/v1/clientes/{id}`       | Eliminar cliente por ID             |
+| GET    | `/sistema/api/v1/clientes`            | Listar todos los clientes          |
+| GET    | `/sistema/api/v1/clientes/{username}` | Buscar cliente por username        |
+| POST   | `/sistema/api/v1/clientes`            | Crear cliente                      |
+| PUT    | `/sistema/api/v1/clientes/{id}`       | Actualizar cliente existente       |
+| PATCH  | `/sistema/api/v1/clientes/{id}`       | Actualizar parcialmente el cliente |
+| DELETE | `/sistema/api/v1/clientes/{id}`       | Eliminar cliente por ID            |
 
 
 ## 📌 Ejemplos de Body JSON
