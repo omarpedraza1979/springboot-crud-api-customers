@@ -1,31 +1,28 @@
-# 📌 API REST CUSTOMERS
 
-REST API built with **Spring Boot** that implements CRUD operations on an in-memory list of customers.  
-This project was created for educational purposes to strengthen development concepts with Java and Spring Boot (without database persistence).
+# 📌 API REST CUSTOMERS:
+
+API REST en **Spring Boot** que implementa operaciones CRUD sobre una lista de clientes en memoria.  
+Proyecto didáctico para reforzar conceptos de desarrollo con Java y Spring Boot (sin persistencia en base de datos).
+
+
+## 📌 Características
+- ✅ CRUD completo (Create, Read, Update, Delete) sobre lista JSON en memoria.  
+- ✅ API REST construida con Spring Boot.
+
 
 ---
 
-## 📌 Features
-- ✅ Full CRUD (Create, Read, Update, Delete) on an in-memory JSON list.  
-- ✅ REST API built with Spring Boot.  
-
----
-
-## 🛠️ Technologies Used
-![Java](https://img.shields.io/badge/Java-17-blue)
-![Spring Boot](https://img.shields.io/badge/SpringBoot-3.3.7-brightgreen)
-![Maven](https://img.shields.io/badge/Maven-Dependency%20Manager-orange)
-![Postman](https://img.shields.io/badge/Postman-API%20Testing-red)
-
-- **Java 17** → Main programming language  
+## 🛠️ Tecnologías utilizadas
+- **Java 17** → Lenguaje principal  
 - **Spring Boot 3.3.7** → Framework  
-- **Maven** → Dependency management  
-- **Postman** → Endpoint testing  
+- **Maven** → Gestión de dependencias  
+- **Postman** → Pruebas de endpoints  
 
 ---
 
-## 📂 Project Structure
+## 📂 Estructura del proyecto
 ```bash
+
 src/
 ├── main/
 │   ├── java/cursoSprintBoot_v2
@@ -34,79 +31,92 @@ src/
 │   │   └── domain
 │   └── resources
 └── test/java/cursoSprintBoot_v2
-⚙️ Installation and Execution
-🔹 Prerequisites
-Java 17+
 
-Maven
+```
+---
 
-🔹 Steps
-bash
-Copiar
-Editar
-# Clone repository
+## ⚙️ Instalación y ejecución
+### 🔹 Requisitos previos
+
+- [Java 17+](https://adoptium.net/)
+- [Maven](https://maven.apache.org/)
+
+
+
+### 🔹 Pasos
+
+# Clonar repositorio
 git clone https://github.com/omarpedraza1979/springboot-crud-api-customers
 cd springboot-crud-api-customers/cursoSprintBoot_v2
 
-# Compile and run
+# Compilar y ejecutar
 mvn spring-boot:run
-👉 The project will be available at:
+
+
+#  El proyecto quedará disponible en:  
+
 http://localhost:8080
 
-📌 Main Endpoints
-Method	Endpoint	Description
-GET	/sistema/api/v1/clientes	Retrieve all customers
-GET	/sistema/api/v1/clientes/{username}	Find customer by username
-POST	/sistema/api/v1/clientes	Create new customer
-PUT	/sistema/api/v1/clientes/{id}	Update existing customer
-PATCH	/sistema/api/v1/clientes/{id}	Partially update a customer
-DELETE	/sistema/api/v1/clientes/{id}	Delete customer by ID
+---
 
-📌 JSON Body Examples
-POST → Create customer
-json
-Copiar
-Editar
+## 📌 Endpoints principales
+
+| Método | Endpoint                              | Descripción                        |
+|--------|---------------------------------------|------------------------------------|
+| GET    | `/sistema/api/v1/clientes`            | Listar todos los clientes           |
+| GET    | `/sistema/api/v1/clientes/{username}` | Buscar cliente por username         |
+| POST   | `/sistema/api/v1/clientes`            | Crear cliente                       |
+| PUT    | `/sistema/api/v1/clientes/{id}`       | Actualizar cliente existente        |
+| PATCH  | `/sistema/api/v1/clientes/{id}`       | Actualizar parcialmente un cliente  |
+| DELETE | `/sistema/api/v1/clientes/{id}`       | Eliminar cliente por ID             |
+
+
+## 📌 Ejemplos de Body JSON
+
+
+### POST → Crear cliente
+```json
 {
   "id": 66666,
   "name": "GOMEZ",
   "userName": "Eparra",
   "password": "passsdadad"
 }
-PUT → Update customer
-json
-Copiar
-Editar
+```
+
+### PUT → Actualizar cliente
+```json
 {
   "id": 66666,
   "name": "GOMEZ",
   "userName": "Eparra",
   "password": "newpassword123"
 }
-PATCH → Partially update customer
-json
-Copiar
-Editar
+```
+
+### PATCH → Actualizar parcialmente cliente
+```json
 {
   "name": "NuevoNombre",
   "userName": "Eparra"
 }
-🧪 Tests
-bash
-Copiar
-Editar
-mvn test
-🧪 Postman
-This project includes a Postman collection to test the API endpoints.
-👉 SpringBootCustomers.postman_collection.json
-
-👨‍💻 Author
-Omar Orlando Pedraza Garzón
-
-GitHub
-
-yaml
-Copiar
-Editar
+```
 
 ---
+## 🧪 Pruebas
+```bash
+mvn test
+```
+
+---
+## 🧪 Postman
+Este proyecto incluye una colección de Postman para probar los endpoints de la API. 
+[SpringBootCustomers.postman_collection.json](./SpringBootCustomers.postman_collection.json)
+
+
+
+## 👨‍💻 Autor
+- **Omar Orlando Pedraza Garzón**
+- [GitHub](https://github.com/omarpedraza1979)
+---
+
