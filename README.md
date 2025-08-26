@@ -16,7 +16,8 @@ Proyecto didáctico para reforzar conceptos de desarrollo con Java y Spring Boot
 - **Java 17** → Lenguaje principal  
 - **Spring Boot 3.3.7** → Framework  
 - **Maven** → Gestión de dependencias  
-- **Postman** → Pruebas de endpoints  
+- **Postman** → Pruebas de endpoints
+- **IntelliJ IDEA** → IDE Desarrollo
 
 ---
 
