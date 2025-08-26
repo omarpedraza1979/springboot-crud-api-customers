@@ -1,8 +1,8 @@
 
-# 📌 API REST CUSTOMERS:
+# 🚀 Spring Boot REST API - Customers CRUD
 
-API REST en **Spring Boot** que implementa operaciones CRUD sobre una lista de clientes en memoria.  
-Proyecto didáctico para reforzar conceptos de desarrollo con Java y Spring Boot (sin persistencia en base de datos).
+API REST construida con Spring Boot que implementa operaciones CRUD sobre una lista de clientes en memoria.
+Este proyecto sirve como base para aprender desarrollo con Spring Boot y probar endpoints REST usando Postman.
 
 
 ## 📌 Características
@@ -46,15 +46,14 @@ src/
 
 ### 🔹 Pasos
 
-# Clonar repositorio
+1. Clonar repositorio
 git clone https://github.com/omarpedraza1979/springboot-crud-api-customers
 cd springboot-crud-api-customers/cursoSprintBoot_v2
 
-# Compilar y ejecutar
+2. Compilar y ejecutar
 mvn spring-boot:run
 
-
-#  El proyecto quedará disponible en:  
+3. La API quedará disponible en:  
 
 http://localhost:8080
 
@@ -71,6 +70,10 @@ http://localhost:8080
 | PATCH  | `/sistema/api/v1/clientes/{id}`       | Actualizar parcialmente un cliente  |
 | DELETE | `/sistema/api/v1/clientes/{id}`       | Eliminar cliente por ID             |
 
+
+## 🧪 Postman
+Este proyecto incluye una colección de Postman para probar los endpoints de la API. 
+[SpringBootCustomers.postman_collection.json](./SpringBootCustomers.postman_collection.json)
 
 
 ## 📌 Ejemplos de Body JSON
@@ -109,16 +112,14 @@ http://localhost:8080
 ```bash
 mvn test
 ```
-
 ---
-## 🧪 Postman
-Este proyecto incluye una colección de Postman para probar los endpoints de la API. 
-[SpringBootCustomers.postman_collection.json](./SpringBootCustomers.postman_collection.json)
-
-
 
 ## 👨‍💻 Autor
 - **Omar Orlando Pedraza Garzón**
 - [GitHub](https://github.com/omarpedraza1979)
 ---
 
+
+## 📜 Licencia
+Este proyecto está bajo la licencia [MIT](LICENSE).  
+Eres libre de usarlo, modificarlo y distribuirlo con fines personales o educativos.
