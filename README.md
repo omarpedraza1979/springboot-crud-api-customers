@@ -4,11 +4,9 @@
 API REST construida con Spring Boot que implementa operaciones CRUD sobre una lista de clientes en memoria.
 Este proyecto sirve como base para aprender desarrollo con Spring Boot y probar endpoints REST usando Postman.
 
-
 ## 📌 Características
 - ✅ CRUD completo (Create, Read, Update, Delete) sobre lista JSON en memoria.  
 - ✅ API REST construida con Spring Boot.
-
 
 ---
 
@@ -43,18 +41,15 @@ src/
 - [Maven](https://maven.apache.org/)
 
 
-
-### 🔹 Pasos
+## 🔹 Pasos
 
 1. Clonar repositorio
 git clone https://github.com/omarpedraza1979/springboot-crud-api-customers
-cd springboot-crud-api-customers/cursoSprintBoot_v2
 
 2. Compilar y ejecutar
-mvn spring-boot:run
+ ..springboot-crud-api-productos\cursoSprintBoot_v2> mvn spring-boot:run   
 
 3. La API quedará disponible en:  
-
 http://localhost:8080
 
 ---
@@ -69,6 +64,29 @@ http://localhost:8080
 | PUT    | `/sistema/api/v1/clientes/{id}`       | Actualizar cliente existente        |
 | PATCH  | `/sistema/api/v1/clientes/{id}`       | Actualizar parcialmente un cliente  |
 | DELETE | `/sistema/api/v1/clientes/{id}`       | Eliminar cliente por ID             |
+
+
+## 🧪 Ejemplo con CURL
+
+
+1. Listar todos los clientes (GET)
+
+curl http://localhost:8080/sistema/api/v1/clientes
+
+2. Crear un nuevo cliente (POST)
+
+curl -X POST http://localhost:8080/sistema/api/v1/clientes 
+  -H "Content-Type: application/json" \
+  -d '{
+    "id": 1001,
+    "name": "Juan Perez",
+    "userName": "jperez",
+    "password": "12345"
+  }'
+  
+3. Eliminar un cliente por ID (DELETE)
+
+curl -X DELETE http://localhost:8080/sistema/api/v1/clientes/1001
 
 
 ## 🧪 Postman
@@ -123,3 +141,5 @@ mvn test
 ## 📜 Licencia
 Este proyecto está bajo la licencia [MIT](LICENSE).  
 Eres libre de usarlo, modificarlo y distribuirlo con fines personales o educativos.
+
+
