@@ -69,11 +69,11 @@ http://localhost:8080
 ## 🧪 Ejemplo con CURL
 
 
-1. Listar todos los clientes (GET)
+**1. Listar todos los clientes (GET)**
 
 curl http://localhost:8080/sistema/api/v1/clientes
 
-2. Crear un nuevo cliente (POST)
+**2. Crear un nuevo cliente (POST)**
 
 curl -X POST http://localhost:8080/sistema/api/v1/clientes 
   -H "Content-Type: application/json" \
@@ -84,7 +84,7 @@ curl -X POST http://localhost:8080/sistema/api/v1/clientes
     "password": "12345"
   }'
   
-3. Eliminar un cliente por ID (DELETE)
+**3. Eliminar un cliente por ID (DELETE)**
 
 curl -X DELETE http://localhost:8080/sistema/api/v1/clientes/1001
 
