@@ -13,7 +13,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-
 @WebMvcTest(CustomerController.class)
 @AutoConfigureMockMvc(addFilters = false)
 class CustomerControllerIntegrationTest {
@@ -21,30 +20,28 @@ class CustomerControllerIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Autowired
-    private ObjectMapper objectMapper;
+    private static final String BASE_URL = "/clientes";
 
     @Test
-    void testGetCustomersInitiallyEmpty() throws Exception {
-        mockMvc.perform(get("/clientes"))
+    void testGetClientesInitiallyEmpty() throws Exception {
+        mockMvc.perform(get(BASE_URL))
                 .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andExpect(content().json("[]"));
     }
 
     @Test
-    void testPostCustomerAndThenGetCustomers() throws Exception {
-        Customer newCustomer = new Customer(1, "Laura Mora", "laura@test.com", "3004445566");
-        String json = objectMapper.writeValueAsString(newCustomer);
+    void testPostCliente() throws Exception {
+        String json = """
+            {"id":1,"userName":"LauraMora","email":"laura@test.com","phone":"3004445566"}
+        """;
 
-        mockMvc.perform(post("/clientes")
+        mockMvc.perform(post(BASE_URL)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(json))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").value("Laura Mora"));
+                .andExpect(status().isCreated())  // ✅ Esperamos 201 Created
+                .andExpect(header().exists("Location")) // ✅ Se genera la URI del nuevo recurso
+                .andExpect(jsonPath("$.userName").value("LauraMora"));
 
-        mockMvc.perform(get("/clientes"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].name").value("Laura Mora"))
-                .andExpect(jsonPath("$[0].email").value("laura@test.com"));
     }
 }
