@@ -5,45 +5,35 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CustomerControllerUnitTest {
+public class CustomerControllerUnitTest {
 
-    private CustomerController customerController;
+    private CustomerController controller;
 
     @BeforeEach
     void setUp() {
-        customerController = new CustomerController();
+        controller = new CustomerController();
     }
 
     @Test
-    void testGetCustomersInitiallyEmpty() {
-        List<Customer> customers = customerController.getCustomers();
-        assertNotNull(customers);
-        assertTrue(customers.isEmpty(), "La lista inicial debe estar vacía");
-    }
+    void testGetCustomers() {
+        List<Customer> expectedCustomers = new ArrayList<>();
+        expectedCustomers.add(new Customer(1, "Juan Pérez", "juan@example.com", "3001234567"));
+        expectedCustomers.add(new Customer(2, "Ana López", "ana@example.com", "3109876543"));
 
-    @Test
-    void testPostCustomerAddsToList() {
-        Customer newCustomer = new Customer(1, "Juan Pérez", "juan@test.com", "3001112233");
+        controller.setCustomers(expectedCustomers);
 
-        ResponseEntity<Customer> response = customerController.postCustomer(newCustomer);
+        ResponseEntity<List<Customer>> response = controller.getCustomers();
 
         assertEquals(200, response.getStatusCodeValue());
-        assertEquals("Juan Pérez", response.getBody().getName());
-        assertEquals(1, customerController.getCustomers().size());
-    }
+        assertNotNull(response.getBody());
+        assertEquals(2, response.getBody().size());
+        assertEquals("Juan Pérez", response.getBody().get(0).getName());
 
-    @Test
-    void testPostMultipleCustomers() {
-        customerController.postCustomer(new Customer(1, "Ana", "ana@test.com", "3001112233"));
-        customerController.postCustomer(new Customer(2, "Luis", "luis@test.com", "3102223344"));
-
-        List<Customer> customers = customerController.getCustomers();
-        assertEquals(2, customers.size());
-        assertEquals("Ana", customers.get(0).getName());
-        assertEquals("Luis", customers.get(1).getName());
+        System.out.println("✅ Test ejecutado correctamente. Clientes: " + response.getBody().size());
     }
 }

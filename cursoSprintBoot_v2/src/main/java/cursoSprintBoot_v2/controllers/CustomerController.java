@@ -126,4 +126,8 @@ public class CustomerController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente no encontrado : "+customer.getId());
     }
 
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
+
 }
